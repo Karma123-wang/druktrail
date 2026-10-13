@@ -114,6 +114,12 @@ footer{background:var(--ink);color:var(--wall);padding-block:36px;font-size:.88r
 footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 .sample{font-size:.78rem;opacity:1;color:var(--line)}
 @media (prefers-reduced-motion:no-preference){.card{transition:transform .2s}.card:hover{transform:translateY(-3px)}}
+.wa-ico{width:1.2em;height:1.2em;flex:none}
+.wa-float{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:10;display:flex;align-items:center;gap:8px;background:#1f9e55;color:#ffffff;font:600 .95rem var(--body);padding:.8rem 1.1rem;border-radius:999px;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.25)}
+.wa-float .wa-ico{width:1.6em;height:1.6em}
+.wa-row{display:flex;align-items:center;gap:8px;font-weight:600;color:#1f9e55;text-decoration:none}
+@media(max-width:560px){.wa-float span{display:none}.wa-float{padding:.85rem}}
+footer{padding-bottom:90px}
 </style></head><body>
 
 <header>
@@ -257,8 +263,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
       <div class="eyebrow">Enquiry</div>
       <h2 style="margin-bottom:20px">Tell us about your trip</h2>
       <form class="form" id="enquiry" novalidate>
-        <div><label for="e-name">Full name</label><input id="e-name" placeholder="Full Name"><div class="err" id="err-name" hidden>Enter your name.</div></div>
-        <div><label for="e-email">Email</label><input id="e-email" type="email" placeholder="your email address"><div class="err" id="err-email" hidden>Enter a valid email address.</div></div>
+        <div><label for="e-name">Full name</label><input id="e-name" placeholder="Karma Wangmo"><div class="err" id="err-name" hidden>Enter your name.</div></div>
+        <div><label for="e-email">Email</label><input id="e-email" type="email" placeholder="you@example.com"><div class="err" id="err-email" hidden>Enter a valid email address.</div></div>
         <div><label for="e-tour">Tour</label><select id="e-tour"></select></div>
         <div><label for="e-date">Arrival date</label><input id="e-date" type="date"></div>
         <div class="full"><label for="e-msg">Anything we should know?</label><textarea id="e-msg" rows="4" placeholder="Interests, fitness level, dietary needs"></textarea></div>
@@ -268,13 +274,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
     </div>
     <div class="contact-side">
       <div><b>OFFICE</b>Norzin Lam, Thimphu, Bhutan</div>
-      <div><b>PHONE AND WHATSAPP</b>+975 17 647743</div>
-      <div><b>EMAIL</b>sonam.tshewang30@gmail.com</div>
+      <div><b>WHATSAPP</b><a class="wa-row wa-link" href="#"><svg viewBox="0 0 32 32" aria-hidden="true" class="wa-ico"><path d="M16 3.5C9.1 3.5 3.6 8.9 3.6 15.6c0 2.3.7 4.5 1.9 6.4L3.5 28.5l6.7-1.9c1.8 1 3.8 1.5 5.8 1.5 6.9 0 12.4-5.4 12.4-12.1S22.9 3.5 16 3.5z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M11.6 9.6c.4-.4 1-.4 1.3.1l1.2 2.3c.2.4.1.9-.2 1.2l-.8.8c.8 1.8 2.3 3.3 4.1 4.1l.8-.8c.3-.3.8-.4 1.2-.2l2.3 1.2c.5.3.6.9.2 1.3l-1 1.1c-.7.7-1.7.9-2.6.6-3.6-1.3-6.4-4.1-7.7-7.7-.3-.9-.1-1.9.6-2.6z" fill="currentColor"/></svg><span class="wa-num">+975 17 00 00 00</span></a></div>
+      <div><b>EMAIL</b>hello@druktrails.example</div>
       <div><b>OFFICE HOURS</b>Mon–Sat, 9 am – 5 pm (BTT)</div>
     </div>
   </div>
 </section>
 
+<a class="wa-float wa-link" href="#" aria-label="Chat with us on WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true" class="wa-ico"><path d="M16 3.5C9.1 3.5 3.6 8.9 3.6 15.6c0 2.3.7 4.5 1.9 6.4L3.5 28.5l6.7-1.9c1.8 1 3.8 1.5 5.8 1.5 6.9 0 12.4-5.4 12.4-12.1S22.9 3.5 16 3.5z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M11.6 9.6c.4-.4 1-.4 1.3.1l1.2 2.3c.2.4.1.9-.2 1.2l-.8.8c.8 1.8 2.3 3.3 4.1 4.1l.8-.8c.3-.3.8-.4 1.2-.2l2.3 1.2c.5.3.6.9.2 1.3l-1 1.1c-.7.7-1.7.9-2.6.6-3.6-1.3-6.4-4.1-7.7-7.7-.3-.9-.1-1.9.6-2.6z" fill="currentColor"/></svg><span>Chat on WhatsApp</span></a>
 <footer>
   <div class="wrap">
     <div><span style="font-family:var(--display);font-size:1.2rem">Druk Trails</span><br>Licensed by the Department of Tourism, Bhutan</div>
@@ -283,6 +290,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 </footer>
 
 <script>
+/* ===== EDIT YOUR WHATSAPP NUMBER HERE ===== */
+const WHATSAPP_NUMBER = "97517000000";        /* country code + number, digits only */
+const WHATSAPP_DISPLAY = "+975 17 00 00 00";  /* how the number is shown on the page */
+const WHATSAPP_MESSAGE = "Hello Druk Trails, I'd like to ask about a tour.";
+/* ========================================== */
+document.querySelectorAll('.wa-link').forEach(a=>{a.href='https://wa.me/'+WHATSAPP_NUMBER+'?text='+encodeURIComponent(WHATSAPP_MESSAGE);a.target='_blank';a.rel='noopener';});
+document.querySelectorAll('.wa-num').forEach(e=>e.textContent=WHATSAPP_DISPLAY);
 const tours=[
  {n:"Cultural Discovery",type:"culture",days:7,route:"Paro · Thimphu · Punakha",best:"Best seller",h:"Tiger's Nest hike, Punakha Dzong, village farmhouse lunch",scene:"dzong",img:"https://images.unsplash.com/photo-1590580673100-ee7ee687bfa6?auto=format&fit=crop&w=900&q=70"},
  {n:"Paro Tshechu Festival",type:"festival",days:6,route:"Paro · Thimphu",best:"Spring festival",h:"Two festival days and the dawn thongdrel unveiling",scene:"flags",img:"https://images.unsplash.com/photo-1637826134825-e54e98a9bce7?auto=format&fit=crop&w=900&q=70"},
